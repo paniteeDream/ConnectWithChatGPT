@@ -1,0 +1,330 @@
+﻿/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    overflow: hidden;
+    height: 65px;
+}
+
+
+
+.blue-color {
+    background: linear-gradient(#2C97E1); 
+    background-clip: text;
+    color: #2C97E1;
+    display: inline;
+}
+
+.btn-custom {
+    margin: 0 auto;
+    display: block;
+    margin-top: 50px;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    margin-top:275px;
+}
+
+.process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    margin-top: 25px;
+}
+
+
+.textboxs {
+    text-align:center;
+    color: red;
+    margin-top:15px;
+}
+
+.textboxs_btn {
+    margin-top:270px;
+}
+
+.p {
+    font-size: 20px;
+    margin-top: 50px;
+    text-align: center;
+    line-height: 2;
+}
+
+
+/* ให้ element อยู่ตรงกลางแนวนอนเท่านั้น */
+.center-horizontally {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Global Styles */
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font: calibri;
+    --main-clr: #2C97E1;
+}
+
+/* The page */
+.main {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    place-items: center;
+    height: 100vh;
+    margin-top: -180px;
+    z-index: -1;
+}
+
+/* The anchor tag */
+.ball {
+    color: var(--main-clr);
+    user-select: none;
+    font-size: 1.5rem;
+    padding: 2rem 6rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 3px solid var(--main-clr);
+    border-radius: 24px;
+    position: relative;
+    transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    letter-spacing: 2px;
+}
+
+/* The Span Wrapper tag */
+.span-wrapper {
+    height: 100%;
+    position: absolute;
+    inset: 0 -2px -4px 0;
+    overflow: hidden;
+    z-index: -1;
+    color: #2C97E1;
+    color: var(--main-clr);
+    user-select: none;
+    font-size: 1.5rem;
+    padding: 2rem 6rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: px solid var(--main-clr);
+    border-radius: 24px;
+    position: relative;
+    transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    letter-spacing: 2px;
+}
+    /* The span tags */
+    .span-wrapper span {
+        background-color: var(--main-clr);
+        width: 30%;
+        height: 100%;
+        border-radius: 100%;
+        position: absolute;
+        transform: scale(1.8) translateY(125%) translateZ(0);
+        transition: all 1s ease;
+    }
+
+/* The Three Individual Span Tag */
+.s1 {
+    left: -10%;
+    transition-delay: 0ms;
+}
+
+.s2 {
+    left: 30%;
+    transition-delay: 500ms;
+}
+
+.s3 {
+    left: 70%;
+    transition-delay: 800ms;
+}
+
+/* Hover State of the parent anchor tag */
+.ball:hover {
+    color: #74A5C6;
+}
+
+    .ball:hover .span-wrapper span {
+        transform: scale(1.7) translateY(0) translateZ(0);
+    }
+
+.trans-btn {
+    text-align: center;
+    display: block;
+    margin-top: 200px;
+}
+
+
+.parent-container {
+    text-align: center;
+    margin-top: -250px;
+    display: flex;
+    justify-content: center; /* วางปุ่มในตรงกลางของ div */
+
+}
+
+a {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    color: #2C97E1;
+}
+
+    a::before, a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+    }
+
+.parent-container a::before {
+    background-color: #2C97E1;
+    height: 2px;
+    bottom: 0;
+    transform-origin: 100% 50%;
+    transform: scaleX(0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.parent-container a::after {
+    content: attr(data-replace);
+    height: 100%;
+    top: 0;
+    color: #2C97E1;
+    transform-origin: 100% 50%;
+    transform: translate3d(200%, 0, 0);
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+a:hover::before {
+    transform-origin: 0% 50%;
+    transform: scaleX(1);
+}
+
+a:hover::after {
+    transform: translate3d(0, 0, 0);
+}
+
+.parent-container a span {
+    color: #2C97E1;
+    display: inline-block;
+    transition: transform .3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+a:hover span {
+    transform: translate3d(-200%, 0, 0);
+}
+
+#resultGridView {
+    border-color: black;
+    width: 800px;
+    margin-top: 20px; /* ระยะห่างด้านบน */
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+}
+
+.header-background {
+    background-color: #b4c6e7;
+    color: black;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: 65px;
+    width: 100%;
+    margin-bottom: 0px;
+    color: #2C97E1;
+    text-align: center;
+    line-height: 65px;
+}
+
+#loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /*   color: #2C97E1; */
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #333;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}*/
+/*
+#loading {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeInOut 2s infinite;
+} */
